@@ -4,7 +4,35 @@
 add_action('wp_footer', 'caia_add_file_jquery');
 function caia_add_file_jquery(){
 ?>
+<script>
+  jQuery(document).ready( function($){
+    if ( $(window).width() < 960 ) {
+		var head = $('.site-header');
+		var list = $('#responsive-menu');
+		var menu = $('#click-menu');
+		var dau = $('.content-dautrang');
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 60) {
+				head.addClass("f-head");
+				list.addClass("f-list");
+				menu.addClass("f-menu");
+				dau.addClass("f-dau");
+			}else {
+				head.removeClass("f-head");
+				list.removeClass("f-list");
+				menu.removeClass("f-menu");
+				dau.removeClass("f-dau");
+			}
+		});	
 
+    	$('.site-header .widget_search .widgettitle').on('click', function() {
+      $(this).toggleClass('active');
+      $(this).parent().find('.search-form').toggleClass('active');
+  });
+  }
+  }
+)
+</script>
 <script>
 
 	document.addEventListener("DOMContentLoaded", function () {
