@@ -22,23 +22,6 @@ function add_swiper_webcomponent_script() {
 }
 add_action('wp_footer', 'add_swiper_webcomponent_script');
 
-//Swiper
-// function caia_add_scripts_swiper() {
-//     // Swiper CSS
-//     wp_enqueue_style(
-//         'caia-swiper-css',
-//         CHILD_URL . '/custom/js/swiper-bundle.min.css'
-//     );
-
-//     // Swiper JS
-//     wp_enqueue_script(
-//         'caia-swiper-js',
-//         CHILD_URL . '/custom/js/swiper-bundle.min.js',
-//         array('jquery')
-//     );
-// }
-// add_action('wp_enqueue_scripts', 'caia_add_scripts_swiper');
-
 
 
 
@@ -56,6 +39,7 @@ function custom_override_style() {
     wp_deregister_style($handle);
     wp_enqueue_style($handle, get_stylesheet_uri(), array(), $version);
 }
+
 //Cho phép upload ảnh định dạng Svg
 add_filter('upload_mimes', 'caia_mime_types', 1, 1);
 function caia_mime_types($mime_types){  
@@ -141,10 +125,25 @@ genesis_register_sidebar(
 
 genesis_register_sidebar( 
 	array(
-		'id'			=> 'content-feature_product',
-		'name'			=> 'Trang chủ - Sản phẩm nổi bật',
+		'id'			=> 'content-background',
+		'name'			=> 'Trang chủ - Nổi bật',
 	)
 );
+
+genesis_register_sidebar( 
+	array(
+		'id'			=> 'content-tieudetongquan',
+		'name'			=> 'Trang chủ - Tiêu đề tổng quan dự án',
+	)
+);
+
+genesis_register_sidebar( 
+	array(
+		'id'			=> 'content-tongquan',
+		'name'			=> 'Trang chủ - Tổng quan dự án',
+	)
+);
+
 
 genesis_register_sidebar( 
 	array(
@@ -156,43 +155,8 @@ genesis_register_sidebar(
 
 genesis_register_sidebar( 
 	array(
-		'id'			=> 'content-temkimloai',
-		'name'			=> 'Trang chủ - Huy chương',
-	)
-);
-
-genesis_register_sidebar( 
-	array(
-		'id'			=> 'content-temnhua',
-		'name'			=> 'Trang chủ - Móc khoá',
-	)
-);
-
-genesis_register_sidebar( 
-	array(
-		'id'			=> 'content-temnganhnghe',
-		'name'			=> 'Trang chủ - Tem ngành nghề',
-	)
-);
-
-genesis_register_sidebar( 
-	array(
 		'id'			=> 'content-banner',
 		'name'			=> 'Trang chủ - Banner',
-	)
-);
-
-genesis_register_sidebar( 
-	array(
-		'id'			=> 'content-temvatlieu',
-		'name'			=> 'Trang chủ - Tem vật liệu',
-	)
-);
-
-genesis_register_sidebar( 
-	array(
-		'id'			=> 'content-biencongty',
-		'name'			=> 'Trang chủ - Biển công ty',
 	)
 );
 

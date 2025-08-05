@@ -26,7 +26,7 @@ $search_query = apply_filters( 'the_search_query', get_search_query() ); // phpc
  *
  * @param string The search text.
  */
-$search_text = apply_filters( 'genesis_search_text', __( 'Search this website', 'genesis' ) );
+$search_text = apply_filters( 'genesis_search_text', __( 'Search...', 'genesis' ) );
 
 /**
  * Search form label.
