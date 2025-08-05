@@ -16,10 +16,11 @@ function caia_add_file_jquery(){
       if ($(window).scrollTop() > 80) {
         $('.site-header').addClass('scrolled');
         $('.site-header .menu a').addClass('scrolled');
-        
+        $('.search-form input[type="search"]').addClass('scrolled');
       } else {
         $('.site-header').removeClass('scrolled');
-         $('.site-header .menu a').removeClass('scrolled');
+        $('.site-header .menu a').removeClass('scrolled');
+        $('.search-form input[type="search"]').removeClass('scrolled');
       }
     });
 
@@ -29,10 +30,13 @@ function caia_add_file_jquery(){
     const target = $($(this).attr('href'));
     if (target.length) {
       $('html, body').animate({
-        scrollTop: target.offset().top - 80 // trừ chiều cao header
+        scrollTop: target.offset().top - 80
       }, 600);
     }
   });
+
+
+
   }
 )
 </script>

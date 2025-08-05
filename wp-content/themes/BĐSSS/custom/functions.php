@@ -144,6 +144,13 @@ genesis_register_sidebar(
 	)
 );
 
+genesis_register_sidebar( 
+	array(
+		'id'			=> 'content-vitri',
+		'name'			=> 'Trang chủ - Vị trí dự án',
+	)
+);
+
 
 genesis_register_sidebar( 
 	array(

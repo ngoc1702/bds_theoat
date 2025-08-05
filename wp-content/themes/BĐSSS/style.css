@@ -156,7 +156,7 @@ body {
     right: -270px;
     cursor: pointer;
     background: #08815c;
-    color: #fff;
+    color: #fff !important;
     height: 45px;
     display: table;
     line-height: 45px;
@@ -165,6 +165,10 @@ body {
     font-size: 16px;
     font-weight: 500;
     transition: background 0.3s ease;
+}
+
+.site-header .textwidget p a{
+    color: #fff !important;
 }
 
 
@@ -456,7 +460,14 @@ ul.menu li.sfHover ul,
 	border: none;
 	background: unset;
 	height: 40px;
+    color: #FFF;
 }
+
+.search-form input[type="search"]::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
 
 .nav-primary .search-form input[type="search"] {
 	background-color: #fff;
@@ -469,6 +480,9 @@ ul.menu li.sfHover ul,
 
 .site-header.scrolled .menu a {
   color: #333 !important;
+}
+.search-form input[type="search"].scrolled::placeholder {
+  color: #333;
 }
 
 /* Inner
@@ -1515,6 +1529,29 @@ input#submit {
     box-shadow: 1rem 1rem 4rem 0 rgba(0, 0, 0, 0.06);
 }
 
+#scrool-top {
+  position: fixed;
+  top: 88%;
+  right: 7px;
+  z-index: 999;
+  cursor: pointer;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#scrool-top:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
+
+
 
 /* CSS COMMOM */
 .content-background {
@@ -1530,7 +1567,7 @@ input#submit {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(57, 90, 71, 0.8); /* dùng rgba để vừa có màu vừa có độ mờ */
+  background-color: rgba(57, 90, 71, 0.65); /* dùng rgba để vừa có màu vừa có độ mờ */
   z-index: 1; /* đảm bảo nằm trên background nhưng dưới nội dung nếu cần */
 }
 

@@ -21,11 +21,19 @@ function caia_add_content_slider(){
 	}
 
 		if( is_active_sidebar( 'content-tongquan' ) ){
-		echo '<div id="section-b" class="content-tongquan section">
+		echo '<div id="tongquan" class="content-tongquan section">
 		<div class="wrap">';
 			dynamic_sidebar( 'Trang chủ - Tổng quan dự án' );
 		echo '</div></div>';
 	}
+
+			if( is_active_sidebar( 'content-vitri' ) ){
+		echo '<div id="vitri" class="content-vitri section">
+		<div class="wrap">';
+			dynamic_sidebar( 'Trang chủ - Vị trí' );
+		echo '</div></div>';
+	}
+
 
 	if( is_active_sidebar( 'content-thanhqua' ) ){
 		echo '<div class="content-thanhtuu section"><div class="wrap">';
