@@ -6,12 +6,12 @@
 
 /* Defaults
 ------------------------------------------------------------ */
-body{
-	overflow-x: hidden;
+body {
+    overflow-x: hidden;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* Reset cơ bản */
@@ -37,7 +37,7 @@ p,
 select,
 textarea {
     color: #333;
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-family: 'Be Vietnam Pro', Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.618;
@@ -62,7 +62,7 @@ label,
 select,
 textarea {
     color: #333;
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-family: 'Be Vietnam Pro', Arial, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: 400;
 }
@@ -129,7 +129,7 @@ body {
 
 .wrap {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1280px;
     ;
     padding: 0;
 }
@@ -140,35 +140,37 @@ body {
 
 .site-header {
     margin: 0 auto;
-    height: 90px;
+    height: 70px;
     width: 100%;
-    /* background-color: #FFF; */
+    background: linear-gradient(180deg, #00493A 0%, #04251E 129.29%);
     position: sticky;
     top: 0;
-    /* box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     float: left;
 }
 
 .site-header .textwidget p {
     position: absolute;
-    top: 2px;
+    top: 9px;
     right: -270px;
     cursor: pointer;
-    background: #08815c;
-    color: #fff !important;
-    height: 45px;
+    border-radius: 6px;
+    background: var(--grad1, linear-gradient(90deg, #FFF2DB 0%, #F5BF75 100%));
+    color: #073229;
+    text-align: center;
     display: table;
-    line-height: 45px;
+    line-height: 32px;
     padding: 0 20px;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 700;
     transition: background 0.3s ease;
+    height: 32px;
+    box-shadow: 0 8px 25px rgba(245, 191, 117, 0.4), 0 2px 8px rgba(255, 242, 219, 0.2);
 }
 
-.site-header .textwidget p a{
-    color: #fff !important;
+.site-header .textwidget p a {
+    color: #073229 !important;
 }
 
 
@@ -177,13 +179,13 @@ body {
     overflow: hidden;
     padding: 0;
     width: 230px;
-    height: 90px;
+    height: 70px;
 
 
 }
 
 .site-title {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Be Vietnam Pro', Arial, sans-serif;
     font-size: 36px;
     line-height: 1.35;
     margin: 0;
@@ -202,8 +204,8 @@ body {
     width: 100%;
     height: 100%;
     text-indent: -9999px;
-    background: url(images/logo.png) no-repeat top left;
-    background-size: 80px;
+    background: url(images/logo.png) no-repeat center;
+    background-size: 120px;
 }
 
 .site-description {
@@ -212,31 +214,31 @@ body {
     display: none;
 }
 
-.site-header .widget_search{
+.site-header .widget_search {
     position: absolute;
-    right: -150px;
+    right: -100px;
     top: 15px;
     z-index: 9;
-} 
+}
 
-.site-header .widget_search form.active{
-	display: block;
-	width: 180px;
-	border: 1px solid #d9d9d9;
+.site-header .widget_search form.active {
+    display: block;
+    width: 180px;
+    border: 1px solid #d9d9d9;
     border-radius: 5px;
     margin-top: -10px;
 }
 
-.site-header .widget_search form{
-	display: none;
+.site-header .widget_search form {
+    display: none;
 }
 
-.site-header .widget_search .widgettitle.active{
-	display: none;
+.site-header .widget_search .widgettitle.active {
+    display: none;
 }
 
-.site-header .widget_search form input[type="submit"]{
-	background: url(images/search.svg) no-repeat center center;
+.site-header .widget_search form input[type="submit"] {
+    background: url(images/search.svg) no-repeat center center;
     text-indent: -9999px;
     display: block;
     width: 20px;
@@ -246,15 +248,15 @@ body {
     float: right;
 }
 
-.site-header .widget_search .widgettitle{
-	background: url(images/search.svg) no-repeat center center;
+.site-header .widget_search .widgettitle {
+    background: url(images/search.svg) no-repeat center center;
     text-indent: -9999px;
     display: block;
     width: 30px;
     height: 20px;
     background-size: 20px;
-    border-right: 1px solid #8d8a8a;
-    padding-right: 18px;
+    border-right: 1px solid #F5F5F5;
+    padding-right: 60px;
     cursor: pointer;
 }
 
@@ -292,6 +294,7 @@ body {
     margin: 0 auto;
     overflow: hidden;
     width: 100%;
+
 }
 
 .menu-primary ul,
@@ -306,19 +309,23 @@ body {
 .site-header .menu li {
     float: left;
     list-style-type: none;
+    font-size: 16px;
 }
 
 
 .menu-secondary a,
 .site-header .menu a {
-    color: #FFF;
     display: block;
     padding: 12px 20px;
     position: relative;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
     transition: 0.4s ease;
+    color: #F5F5F5;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+    text-transform: uppercase;
 }
 
 .menu-primary li a:active,
@@ -336,7 +343,11 @@ body {
 .site-header .menu .current_page_item a,
 .site-header .menu .current-cat a,
 .site-header .menu .current-menu-item a {
-    color: #1D429A;
+    background: var(--grad1, linear-gradient(90deg, #FFF2DB 0%, #F5BF75 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 .menu-primary li li a,
@@ -393,8 +404,9 @@ body {
     margin: -36px 0 0 159px;
 } */
 
-.menu-primary li ul ul, .menu-secondary li ul ul, .site-header .menu li ul ul
- {
+.menu-primary li ul ul,
+.menu-secondary li ul ul,
+.site-header .menu li ul ul {
     margin: -64px 0 0 232px;
 }
 
@@ -450,39 +462,40 @@ ul.menu li.sfHover ul,
 }
 
 .sidebar .search-form {
-	padding: 5px 0 0 15px;
+    padding: 5px 0 0 15px;
 }
 
 .search-form input[type="search"] {
-	margin: 0;
-	padding: 6px 5px 6px 15px;
-	width: 130px;
-	border: none;
-	background: unset;
-	height: 40px;
+    margin: 0;
+    padding: 6px 5px 6px 15px;
+    width: 130px;
+    border: none;
+    background: unset;
+    height: 40px;
     color: #FFF;
 }
 
 .search-form input[type="search"]::placeholder {
-  color: #fff;
-  opacity: 1;
+    color: #fff;
+    opacity: 1;
 }
 
 
 .nav-primary .search-form input[type="search"] {
-	background-color: #fff;
-	margin: 2px -7px 0 0;
+    background-color: #fff;
+    margin: 2px -7px 0 0;
 }
 
 .site-header.scrolled {
-  background-color: white !important;
+    background-color: white !important;
 }
 
 .site-header.scrolled .menu a {
-  color: #333 !important;
+    color: #333 !important;
 }
+
 .search-form input[type="search"].scrolled::placeholder {
-  color: #333;
+    color: #333;
 }
 
 /* Inner
@@ -492,7 +505,7 @@ ul.menu li.sfHover ul,
     margin: 0 auto;
     overflow: visible;
     padding: 20px 0;
-    width: 1200px;
+    width: 1280px;
     box-sizing: border-box;
 }
 
@@ -633,7 +646,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Be Vietnam Pro', Arial, sans-serif;
     line-height: 1.35;
     margin: 0 0 10px;
 }
@@ -655,7 +668,7 @@ h2 a:visited {
 h2 a,
 h2 a:visited {
     color: #333;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Be Vietnam Pro', Arial, sans-serif;
 }
 
 h2 a:hover {
@@ -920,7 +933,7 @@ p.wp-caption-text {
 input[type="button"],
 input[type="submit"] {
     background: #f2f2f2;
-    cursor: pointer;
+    cursor: poBe Vietnam Pro;
     padding: 10px 20px;
     color: #333;
     -webkit-appearance: none;
@@ -945,7 +958,7 @@ input:hover[type="submit"] {
 }
 
 .site-header .wrap {
-    max-width: 68% !important;
+    max-width: 72% !important;
 }
 
 
@@ -1160,7 +1173,7 @@ input#submit {
 }
 
 .slick-list.dragging {
-    cursor: pointer;
+    cursor: poBe Vietnam Pro;
     cursor: hand;
 }
 
@@ -1249,7 +1262,7 @@ input#submit {
     height: 8px;
     margin-right: 5px;
     padding: 0;
-    cursor: pointer;
+    cursor: poBe Vietnam Pro;
 }
 
 .slick-dots li button {
@@ -1260,7 +1273,7 @@ input#submit {
     height: 8px;
     padding: 5px;
     border-radius: 100px;
-    cursor: pointer;
+    cursor: poBe Vietnam Pro;
     color: transparent;
     border: 0;
     outline: none;
@@ -1322,7 +1335,7 @@ input#submit {
     margin-top: 12px;
 }
 
-.before_footer .widget:first-child  ul li {
+.before_footer .widget:first-child ul li {
     display: flex;
     align-items: stretch;
     gap: 12px;
@@ -1348,7 +1361,7 @@ input#submit {
 
 /* BLOG */
 .content {
-    max-width: 1200px;
+    max-width: 1280px;
     display: flex;
     justify-content: space-between;
     gap: 24px;
@@ -1507,7 +1520,8 @@ input#submit {
     }
 }
 
-.aside-box .box-info .text-m, .aside-box .box-info a{
+.aside-box .box-info .text-m,
+.aside-box .box-info a {
     color: #1D429A;
     font-weight: 600;
     transition: 0.4s ease;
@@ -1530,53 +1544,181 @@ input#submit {
 }
 
 #scrool-top {
-  position: fixed;
-  top: 88%;
-  right: 7px;
-  z-index: 999;
-  cursor: pointer;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 12px 18px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 88%;
+    right: 7px;
+    z-index: 999;
+    cursor: poBe Vietnam Pro;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: poBe Vietnam Pro;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 #scrool-top:hover {
-  background-color: #555;
-  transform: scale(1.1);
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+/* NHẬN TƯ VẤN */
+
+
+
+.nhantuvan .widget_caldera_forms_widget {
+    display: none;
+}
+
+.nhantuvan .widget_caldera_forms_widget .widget-wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    background: #395a47;
+    padding: 20px;
+    z-index: 3000;
+    border-radius: 20px;
+    max-width: 650px;
+}
+
+.content-contact .widget p,
+.nhantuvan .widget_caldera_forms_widget p {
+    font-size: 18px;
+}
+
+.content-contact .widget_caldera_forms_widget input,
+.content-lienhe form input,
+.nhantuvan .widget_caldera_forms_widget input {
+    height: 50px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #730E22;
+    box-shadow: none;
+}
+
+.content-contact .widget_caldera_forms_widget textarea,
+.content-lienhe form textarea,
+.nhantuvan .widget_caldera_forms_widget textarea {
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #730E22;
+    box-shadow: none;
+}
+
+.content-contact .widget_caldera_forms_widget input[type="submit"],
+.content-lienhe form input[type="submit"],
+.nhantuvan .widget_caldera_forms_widget input[type="submit"] {
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0 40px;
+    border: 1px solid #fff;
+    background: 395a47;
+    color: #fff;
+    display: table;
+    margin: 0;
+    transition: background 0.3s ease;
+}
+
+.nhantuvan .widget_caldera_forms_widget {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+}
+
+.nhantuvan .widget_caldera_forms_widget .widget-wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background: #395a47;
+    padding: 20px;
+    z-index: 3000;
+    border-radius: 20px;
+}
+
+.nhantuvan .widget_caldera_forms_widget .widgettitle {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: -21px;
+    top: -21px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    cursor: poBe Vietnam Pro;
+    font-weight: 500;
+    font-size: 13px;
+    margin: 0 !important;
+    font-family: 'Avo';
+}
+
+.nhantuvan .widget_caldera_forms_widget p {
+    margin-bottom: 20px;
 }
 
 
 
 /* CSS COMMOM */
 .content-background {
-    background-image: url(images/banner-the-oasis-riverside.jpg);
-    background-size: cover;
-        background-position: center;
-    position: relative;
+  background-image: url('images/TT 2-co-logo 2.png');
+  background-color: lightgray;
+  background-position: 0px -247.815px;
+  background-size: 100% 146.785%;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 110px 0 40px;
+  /* height: 750px; */
 }
 
+
 .bg-opacity {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(57, 90, 71, 0.65); /* dùng rgba để vừa có màu vừa có độ mờ */
-  z-index: 1; /* đảm bảo nằm trên background nhưng dưới nội dung nếu cần */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(245, 245, 245, 0.20);
+    backdrop-filter: blur(10px);
+    z-index: 1;
 }
+
+.content-background .textwidget ul{
+    list-style-type: none;
+   z-index: 999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .content-tongquan {
     padding: 60px 0px 0px;
     margin: auto;
 }
 
-.content-tieudetongquan .widget-title{
+.content-tieudetongquan .widget-title {
     color: #395a47;
     font-size: 32px;
     font-weight: 700;
@@ -1585,20 +1727,20 @@ input#submit {
     text-transform: uppercase;
 }
 
-.content-tieudetongquan .widget-title span{ 
+.content-tieudetongquan .widget-title span {
     color: #ff0000;
 }
 
-.content-tieudetongquan .textwidget{
-   font-size: 16px;
-   font-weight: 400;
-   line-height: 24px;
-   text-align: center;
-   margin: 12px auto;
-   max-width: 900px;
+.content-tieudetongquan .textwidget {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    margin: 12px auto;
+    max-width: 900px;
 }
 
-.content-tongquan .wrap{
+.content-tongquan .wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;

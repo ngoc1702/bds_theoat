@@ -112,7 +112,7 @@ function caia_add_font_website(){
 	?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<?php
 }
 
@@ -154,48 +154,42 @@ genesis_register_sidebar(
 
 genesis_register_sidebar( 
 	array(
-		'id'			=> 'content-thanhqua',
-		'name'			=> 'Trang chủ - Thành tựu',
+		'id'			=> 'content-matbang',
+		'name'			=> 'Trang chủ - Mặt bằng',
 	)
 );
 
 
 genesis_register_sidebar( 
 	array(
-		'id'			=> 'content-banner',
-		'name'			=> 'Trang chủ - Banner',
+		'id'			=> 'content-tienich',
+		'name'			=> 'Trang chủ - Tiện ích',
 	)
 );
+
 
 
 genesis_register_sidebar( 
 	array(
-		'id'			=> 'content-quytrinhthietke',
-		'name'			=> 'Trang chủ - Quy trình thiết kế',
+		'id'			=> 'content-lienhe',
+		'name'			=> 'Trang chủ - Liên hệ',
 	)
 );
 
-genesis_register_sidebar( 
-	array(
-		'id'			=> 'content-doitac',
-		'name'			=> 'Trang chủ - Đối tác',
-	)
-);
-
-genesis_register_sidebar( 
-	array(
-		'id'			=> 'content-feedback-title',
-		'name'			=> 'Trang chủ - Feedback-Tiêu đề',
-	)
-);
+// genesis_register_sidebar( 
+// 	array(
+// 		'id'			=> 'content-feedback-title',
+// 		'name'			=> 'Trang chủ - Feedback-Tiêu đề',
+// 	)
+// );
 
 
-genesis_register_sidebar( 
-	array(
-		'id'			=> 'content-feedback',
-		'name'			=> 'Trang chủ - Feedback',
-	)
-);
+// genesis_register_sidebar( 
+// 	array(
+// 		'id'			=> 'content-feedback',
+// 		'name'			=> 'Trang chủ - Feedback',
+// 	)
+// );
 
 
 

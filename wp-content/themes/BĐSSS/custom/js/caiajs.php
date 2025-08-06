@@ -4,25 +4,145 @@
 add_action('wp_footer', 'caia_add_file_jquery');
 function caia_add_file_jquery(){
 ?>
+
+<!-- <script>
+jQuery(document).ready(function ($) {
+  const $container = $('<swiper-container class="mySwiper"></swiper-container>')[0]; // DOM element thuần
+
+  // Gán các thuộc tính cho hiệu ứng coverflow
+  $container.pagination = true;
+  $container.effect = 'coverflow';
+  $container.grabCursor = true;
+  $container.centeredSlides = true;
+  $container.slidesPerView = 'auto';
+
+  $container.coverflowEffect = {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true
+  };
+
+  $container.autoplay = {
+    delay: 3000,
+    pauseOnMouseEnter: true,
+    disableOnInteraction: false
+  };
+
+  $container.speed = 800;
+
+  // Tạo các swiper-slide từ <li>
+  $('.content-background .textwidget ul').children().each(function () {
+    const slide = document.createElement('swiper-slide');
+    slide.appendChild(this.cloneNode(true));
+    $container.appendChild(slide);
+  });
+
+  // Thay thế <ul> bằng swiper
+  $('.content-background .textwidget ul').replaceWith($container);
+
+  // Xử lý custom buttons sau khi swiper khởi tạo
+  customElements.whenDefined('swiper-container').then(() => {
+    const swiperEl = document.querySelector('.mySwiper');
+    const btnNext = document.querySelector('.custom-next-biencongty');
+    const btnPrev = document.querySelector('.custom-prev-biencongty');
+
+    function updateNavButtons(swiper) {
+      if (swiper.isBeginning) {
+        btnPrev?.setAttribute('disabled', 'true');
+      } else {
+        btnPrev?.removeAttribute('disabled');
+      }
+
+      if (swiper.isEnd) {
+        btnNext?.setAttribute('disabled', 'true');
+      } else {
+        btnNext?.removeAttribute('disabled');
+      }
+    }
+
+    function bindCustomButtons() {
+      const swiper = swiperEl.swiper;
+      if (!swiper) {
+        setTimeout(bindCustomButtons, 100);
+        return;
+      }
+
+      btnNext?.addEventListener('click', () => swiper.slideNext());
+      btnPrev?.addEventListener('click', () => swiper.slidePrev());
+
+      swiper.on('slideChange', () => updateNavButtons(swiper));
+      swiper.on('afterInit', () => updateNavButtons(swiper));
+
+      updateNavButtons(swiper);
+    }
+
+    bindCustomButtons();
+  });
+});
+</script> -->
+
+
+<!-- <script>
+  jQuery(document).ready(function($) {
+  $(".content-background .textwidget ul").slick({
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 1,
+    arrows: false,
+    infinite: true,
+    dots: true,
+    speed: 600,
+    autoplay: false,
+    autoplaySpeed: 6000,
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+});
+
+</script> -->
+
+
 <script>
   jQuery(document).ready( function($){
-   	$('.site-header .widget_search .widgettitle').on('click', function() {
-      $(this).toggleClass('active');
-      $(this).parent().find('.search-form').toggleClass('active');
-    }
-  )
+  //  	$('.site-header .widget_search .widgettitle').on('click', function() {
+  //     $(this).toggleClass('active');
+  //     $(this).parent().find('.search-form').toggleClass('active');
+  //   }
+  // )
 
-      $(window).on('scroll', function() {
-      if ($(window).scrollTop() > 80) {
-        $('.site-header').addClass('scrolled');
-        $('.site-header .menu a').addClass('scrolled');
-        $('.search-form input[type="search"]').addClass('scrolled');
-      } else {
-        $('.site-header').removeClass('scrolled');
-        $('.site-header .menu a').removeClass('scrolled');
-        $('.search-form input[type="search"]').removeClass('scrolled');
-      }
-    });
+  //     $(window).on('scroll', function() {
+  //     if ($(window).scrollTop() > 80) {
+  //       $('.site-header').addClass('scrolled');
+  //       $('.site-header .menu a').addClass('scrolled');
+  //       $('.search-form input[type="search"]').addClass('scrolled');
+  //     } else {
+  //       $('.site-header').removeClass('scrolled');
+  //       $('.site-header .menu a').removeClass('scrolled');
+  //       $('.search-form input[type="search"]').removeClass('scrolled');
+  //     }
+  //   });
 
 
     $('.site-header .menu a[href^="#"]').on('click', function(e){
@@ -55,7 +175,7 @@ function caia_add_file_jquery(){
 
     const updateCount = () => {
       count += increment;
-      if (count >= target) {
+      if (count >= target) { 
         counter.textContent = target;
       } else {
         counter.textContent = count;
@@ -69,28 +189,28 @@ function caia_add_file_jquery(){
 
 jQuery(document).ready(function($) {
 
-	$('.site-header .textwidget p').click(function() {
-			$('.nhantuvan').fadeIn();
-	});
+	// $('.site-header .textwidget p').click(function() {
+	// 		$('.nhantuvan .widget_caldera_forms_widget').fadeIn();
+	// });
 
-	$('.nhantuvan .widget_caldera_forms_widget .widgettitle').click(function() {
-			$('.nhantuvan').fadeOut();
+	// $('.nhantuvan .widget_caldera_forms_widget .widgettitle').click(function() {
+	// 		$('.nhantuvan .widget_caldera_forms_widget').fadeOut();
     	
-	});
+	// });
 }
 )
 
 
-jQuery(document).ready(function($) {
-  $('.nhanbaogia span').click(function() {
-    $('.nhantuvan').fadeIn();
-    $('.nhantuvan .widget_caldera_forms_widget').fadeIn();
-  });
+// jQuery(document).ready(function($) {
+//   $('.nhanbaogia span').click(function() {
+//     $('.nhantuvan').fadeIn();
+//     $('.nhantuvan .widget_caldera_forms_widget').fadeIn();
+//   });
 
-  $('.nhantuvan .close-popup').click(function() {
-    $('.nhantuvan').fadeOut();
-  });
-});
+//   $('.nhantuvan .close-popup').click(function() {
+//     $('.nhantuvan').fadeOut();
+//   });
+// });
 
 
 
