@@ -1671,77 +1671,189 @@ input#submit {
 
 /* CSS COMMOM */
 .content-background {
-  background-image: url('images/TT 2-co-logo 2.png');
+  background-image: url('images/Component\ 13.png');
   background-color: lightgray;
-  background-position: 0px -247.815px;
-  background-size: 100% 146.785%;
+  /* background-position: 0px -247.815px;
+  background-size: 100% 146.785%; */
   background-repeat: no-repeat;
   position: relative;
-  padding: 110px 0 40px;
-  /* height: 750px; */
+  padding: 0px 0 40px;
 }
 
 
-.bg-opacity {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(245, 245, 245, 0.20);
-    backdrop-filter: blur(10px);
-    z-index: 1;
+/* .bg-opacity {
+   background: #F5F5F5;
+  filter: blur(25px);
+  height: 200px;
+  flex-shrink: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+} */
+
+
+
+
+.content-tieudetongquan{
+    margin-top: 24px;
 }
 
-.content-background .textwidget ul{
-    list-style-type: none;
-   z-index: 999;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.content-tongquan {
-    padding: 60px 0px 0px;
-    margin: auto;
-}
 
 .content-tieudetongquan .widget-title {
-    color: #395a47;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 36px;
-    text-align: center;
-    text-transform: uppercase;
+    color: var(--BODY-TEXT, #1F1F1F);
+text-align: center;
+font-size: 36px;
+font-style: normal;
+font-weight: 800;
+line-height: 56px;
+text-transform: uppercase;
+max-width: 940px;
+margin: auto;
 }
 
 .content-tieudetongquan .widget-title span {
-    color: #ff0000;
+    color: var(--color1, #00493A);
 }
 
-.content-tieudetongquan .textwidget {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: center;
-    margin: 12px auto;
-    max-width: 900px;
+.content-tongquan {
+    padding: 65px 0px 20px;
+    margin: auto;
 }
 
 .content-tongquan .wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.content-tongquan .wrap > section {
+     width: 405px;
+height: 322px;
+flex-shrink: 0;
+border-radius: 10px 150px 10px 10px;
+background: var(--grad2, linear-gradient(180deg, #00493A 0%, #04251E 100%));
+box-shadow: -32px 36px 24px 0 rgba(0, 0, 0, 0.10), 0 2px 16px 0 rgba(2, 27, 22, 0.50);
+padding: 48px;
+color:#F5F5F5
+}
+
+.content-tongquan .wrap > section:last-child {
+  grid-column: 1 / -1;     
+  justify-self: center;   
+  width: 100%;                
+  max-width: 800px;           
+  text-align: center;
+  border-radius: none;
+background: none;
+box-shadow: none;
+padding: 0;
+margin-top: 18px;
+height: auto;
+}
+
+.content-tongquan .wrap > section:last-child p{
+    color: #000;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 42px;
+}
+
+.content-tongquan .wrap > section:last-child strong{
+    color: var(--color1, #00493A);
+text-align: center;
+font-size: 28px;
+font-style: normal;
+font-weight: 800;
+line-height: 42px;
+text-transform: uppercase;
+}
+
+.content-tongquan .wrap strong{
+    color: #F5F5F5;
+text-align: justify;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 32px; 
+
+}
+
+.content-tongquan .wrap p:nth-child(3){
+color: #F5F5F5;
+text-align: justify;
+font-size: 17px;
+font-style: normal;
+font-weight: 600;
+line-height: 32px; 
+margin-top: 10px;
+position: relative;
+  display: inline-block;
+  transition: all 0.4s ease;
+  padding-bottom: 14px;
+}
+
+.content-tongquan .wrap p:nth-child(3):hover {
+  background: var(--grad1, linear-gradient(90deg, #FFF2DB 0%, #F5BF75 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Gạch chân chạy từ trái sang phải */
+.content-tongquan .wrap p:nth-child(3)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--grad1, linear-gradient(90deg, #FFF2DB 0%, #F5BF75 100%));
+  transition: width 0.6s ease;
+}
+
+.content-tongquan .wrap p:nth-child(3):hover::after {
+  width: 100%;
+}
+
+
+.content-vitri {
+    margin: 20px auto 80px;
+    padding-top: 80px;
+    width: 100%;
+    height: auto;
+    background: url(images/Rectangle\ 5508.png) center center / cover no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.content-vitri .wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+
+.content-vitri .widget-title{
+    color: #F5F5F5;
+text-align: center;
+text-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
+font-size: 36px;
+font-style: normal;
+font-weight: 800;
+line-height: 32px; 
+text-transform: uppercase;
+}
+
+.content-vitri .widget-title span{
+    background: var(--grad1, linear-gradient(90deg, #FFF2DB 0%, #F5BF75 100%));
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }

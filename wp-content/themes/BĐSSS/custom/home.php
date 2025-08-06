@@ -30,7 +30,7 @@ function caia_add_content_slider(){
 			if( is_active_sidebar( 'content-vitri' ) ){
 		echo '<div id="vitri" class="content-vitri section">
 		<div class="wrap">';
-			dynamic_sidebar( 'Trang chủ - Vị trí' );
+			dynamic_sidebar( 'Trang chủ - Vị trí dự án' );
 		echo '</div></div>';
 	}
 
