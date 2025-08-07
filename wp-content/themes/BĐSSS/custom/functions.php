@@ -196,36 +196,18 @@ genesis_register_sidebar(
 	)
 );
 
-
-
-genesis_register_sidebar( 
-	array(
-		'id'			=> 'content-lienhe',
-		'name'			=> 'Trang chủ - Liên hệ',
-	)
-);
-
-// genesis_register_sidebar( 
-// 	array(
-// 		'id'			=> 'content-feedback-title',
-// 		'name'			=> 'Trang chủ - Feedback-Tiêu đề',
-// 	)
-// );
-
-
-// genesis_register_sidebar( 
-// 	array(
-// 		'id'			=> 'content-feedback',
-// 		'name'			=> 'Trang chủ - Feedback',
-// 	)
-// );
-
-
-
 genesis_register_sidebar( 
 	array(
 		'id'			=> 'content-news',
 		'name'			=> 'Trang chủ - Tin tức',
+	)
+);
+
+
+genesis_register_sidebar( 
+	array(
+		'id'			=> 'content-thanhvien',
+		'name'			=> 'Trang chủ - Thành viên',
 	)
 );
 

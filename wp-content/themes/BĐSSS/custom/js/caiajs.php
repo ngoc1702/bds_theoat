@@ -19,6 +19,33 @@ function caia_add_file_jquery(){
   });
 </script>
 
+<script>
+jQuery(document).ready(function ($) {
+  $('.content-tienich ul:first-child').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    arrows: false,
+    fade: true,
+    autoplay: true,             
+    autoplaySpeed: 4000,         
+    asNavFor: '.content-tienich ul:last-child'
+  });
+
+  $('.content-tienich ul:last-child').slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    infinite: true,
+    asNavFor: '.content-tienich ul:first-child',
+    dots: false,
+    arrows: false,
+    centerMode: false,
+    focusOnSelect: true
+  });
+});
+</script>
+
+
 
 
 

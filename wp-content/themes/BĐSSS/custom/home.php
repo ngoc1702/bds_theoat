@@ -76,27 +76,16 @@ function caia_add_content_slider(){
 		echo '</div></div>';
 	}
 
-		if( is_active_sidebar( 'content-lienhe' ) ){
-		echo '<div id="lienhe" class="content-lienhe section"><div class="wrap">';
-			dynamic_sidebar( 'Trang chủ - Liên hệ' );
-		echo '</div></div>';
-	}
-
-	// if( is_active_sidebar( 'content-feedback-title' ) ){
-	// 	echo '<div  class="content-feedback-title section"><div class="wrap">';
-	// 		dynamic_sidebar( 'Trang chủ - Feedback-Tiêu đề' );
-	// 	echo '</div></div>';
-	// }
-
-	// if( is_active_sidebar( 'content-feedback' ) ){
-	// 	echo '<div  class="content-feedback section"><div class="wrap">';
-	// 		dynamic_sidebar( 'Trang chủ - Feedback' );
-	// 	echo '</div></div>';
-	// }
 
 	if( is_active_sidebar( 'content-news' ) ){
 		echo '<div id="tinthitruong"  class="content-news section"><div class="wrap">';
 			dynamic_sidebar( 'Trang chủ - Tin tức' );
+		echo '</div></div>';
+	}
+
+			if( is_active_sidebar( 'content-thanhvien' ) ){
+		echo '<div id="lienhe" class="content-thanhvien section"><div class="wrap">';
+			dynamic_sidebar( 'Trang chủ - Thành viên' );
 		echo '</div></div>';
 	}
 	
