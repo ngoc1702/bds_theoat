@@ -132,10 +132,19 @@ genesis_register_sidebar(
 
 genesis_register_sidebar( 
 	array(
-		'id'			=> 'content-tieudetongquan',
-		'name'			=> 'Trang chủ - Tiêu đề tổng quan dự án',
+		'id'			=> 'content-moban1',
+		'name'			=> 'Trang chủ - Mở bán 1',
 	)
 );
+
+genesis_register_sidebar( 
+	array(
+		'id'			=> 'content-moban2',
+		'name'			=> 'Trang chủ - Mở bán 2',
+	)
+);
+
+
 
 genesis_register_sidebar( 
 	array(
@@ -146,16 +155,36 @@ genesis_register_sidebar(
 
 genesis_register_sidebar( 
 	array(
-		'id'			=> 'content-vitri',
-		'name'			=> 'Trang chủ - Vị trí dự án',
+		'id'			=> 'content-vitri1',
+		'name'			=> 'Trang chủ - Vị trí dự án 1',
 	)
 );
 
+genesis_register_sidebar( 
+	array(
+		'id'			=> 'content-vitri2',
+		'name'			=> 'Trang chủ - Vị trí dự án 2',
+	)
+);
 
 genesis_register_sidebar( 
 	array(
 		'id'			=> 'content-matbang',
 		'name'			=> 'Trang chủ - Mặt bằng',
+	)
+);
+
+genesis_register_sidebar( 
+	array(
+		'id'			=> 'content-tuvan',
+		'name'			=> 'Trang chủ - Tư vấn',
+	)
+);
+
+genesis_register_sidebar( 
+	array(
+		'id'			=> 'content-sanpham',
+		'name'			=> 'Trang chủ - Sản phẩm',
 	)
 );
 

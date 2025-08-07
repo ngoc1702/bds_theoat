@@ -11,14 +11,22 @@ function caia_add_content_slider(){
 			dynamic_sidebar( 'Trang chủ - Nổi bật' );
 		echo '</div></div>';
 	}
-	
 
-			if( is_active_sidebar( 'content-tieudetongquan' ) ){
-		echo '<div  id="tongquan" class="content-tieudetongquan section">
+				if( is_active_sidebar( 'content-moban1' ) ){
+		echo '<div  class="content-moban1 section">
 		<div class="wrap">';
-			dynamic_sidebar( 'Trang chủ - Tiêu đề tổng quan dự án' );
+			dynamic_sidebar( 'Trang chủ - Mở bán 1' );
 		echo '</div></div>';
 	}
+
+					if( is_active_sidebar( 'content-moban2' ) ){
+		echo '<div  class="content-moban2 section">
+		<div class="wrap">';
+			dynamic_sidebar( 'Trang chủ - Mở bán 2' );
+		echo '</div></div>';
+	}
+	
+
 
 		if( is_active_sidebar( 'content-tongquan' ) ){
 		echo '<div class="content-tongquan section">
@@ -27,12 +35,20 @@ function caia_add_content_slider(){
 		echo '</div></div>';
 	}
 
-			if( is_active_sidebar( 'content-vitri' ) ){
-		echo '<div id="vitri" class="content-vitri section">
+			if( is_active_sidebar( 'content-vitri1' ) ){
+		echo '<div id="vitri" class="content-vitri1 section">
 		<div class="wrap">';
-			dynamic_sidebar( 'Trang chủ - Vị trí dự án' );
+			dynamic_sidebar( 'Trang chủ - Vị trí dự án 1' );
 		echo '</div></div>';
 	}
+
+				if( is_active_sidebar( 'content-vitri2' ) ){
+		echo '<div class="content-vitri2 section">
+		<div class="wrap">';
+			dynamic_sidebar( 'Trang chủ - Vị trí dự án 2' );
+		echo '</div></div>';
+	}
+
 
 
 	if( is_active_sidebar( 'content-matbang' ) ){
@@ -41,7 +57,18 @@ function caia_add_content_slider(){
 		echo '</div></div>';
 	}
 
+		if( is_active_sidebar( 'content-tuvan' ) ){
+		echo '<div class="content-tuvan section"><div class="wrap">';
+			dynamic_sidebar( 'Trang chủ - Tư vấn' );
+		echo '</div></div>';
+	}
 
+			if( is_active_sidebar( 'content-sanpham' ) ){
+		echo '<div class="content-sanpham section"><div class="wrap">';
+			dynamic_sidebar( 'Trang chủ - Sản phẩm' );
+		echo '</div></div>';
+	}
+   
 
 	if( is_active_sidebar( 'content-tienich' ) ){
 		echo '<div id="tienich" class="content-tienich section"><div class="wrap">';

@@ -4,124 +4,24 @@
 add_action('wp_footer', 'caia_add_file_jquery');
 function caia_add_file_jquery(){
 ?>
-
-<!-- <script>
-jQuery(document).ready(function ($) {
-  const $container = $('<swiper-container class="mySwiper"></swiper-container>')[0]; // DOM element thuần
-
-  // Gán các thuộc tính cho hiệu ứng coverflow
-  $container.pagination = true;
-  $container.effect = 'coverflow';
-  $container.grabCursor = true;
-  $container.centeredSlides = true;
-  $container.slidesPerView = 'auto';
-
-  $container.coverflowEffect = {
-    rotate: 50,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: true
-  };
-
-  $container.autoplay = {
-    delay: 3000,
-    pauseOnMouseEnter: true,
-    disableOnInteraction: false
-  };
-
-  $container.speed = 800;
-
-  // Tạo các swiper-slide từ <li>
-  $('.content-background .textwidget ul').children().each(function () {
-    const slide = document.createElement('swiper-slide');
-    slide.appendChild(this.cloneNode(true));
-    $container.appendChild(slide);
+<script>
+  document.getElementById('video-thumbnail').addEventListener('click', function () {
+    this.classList.add('is-playing');
+    this.innerHTML = `
+      <iframe width="689" height="402"
+        src="https://www.youtube.com/embed/30fxjibK2IY?autoplay=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    `;
   });
-
-  // Thay thế <ul> bằng swiper
-  $('.content-background .textwidget ul').replaceWith($container);
-
-  // Xử lý custom buttons sau khi swiper khởi tạo
-  customElements.whenDefined('swiper-container').then(() => {
-    const swiperEl = document.querySelector('.mySwiper');
-    const btnNext = document.querySelector('.custom-next-biencongty');
-    const btnPrev = document.querySelector('.custom-prev-biencongty');
-
-    function updateNavButtons(swiper) {
-      if (swiper.isBeginning) {
-        btnPrev?.setAttribute('disabled', 'true');
-      } else {
-        btnPrev?.removeAttribute('disabled');
-      }
-
-      if (swiper.isEnd) {
-        btnNext?.setAttribute('disabled', 'true');
-      } else {
-        btnNext?.removeAttribute('disabled');
-      }
-    }
-
-    function bindCustomButtons() {
-      const swiper = swiperEl.swiper;
-      if (!swiper) {
-        setTimeout(bindCustomButtons, 100);
-        return;
-      }
-
-      btnNext?.addEventListener('click', () => swiper.slideNext());
-      btnPrev?.addEventListener('click', () => swiper.slidePrev());
-
-      swiper.on('slideChange', () => updateNavButtons(swiper));
-      swiper.on('afterInit', () => updateNavButtons(swiper));
-
-      updateNavButtons(swiper);
-    }
-
-    bindCustomButtons();
-  });
-});
-</script> -->
+</script>
 
 
-<!-- <script>
-  jQuery(document).ready(function($) {
-  $(".content-background .textwidget ul").slick({
-    centerMode: true,
-    centerPadding: '60px',
-    slidesToShow: 1,
-    arrows: false,
-    infinite: true,
-    dots: true,
-    speed: 600,
-    autoplay: false,
-    autoplaySpeed: 6000,
-    pauseOnHover: false,
-    pauseOnFocus: false,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 1
-        }
-      }
-    ]
-  });
-});
 
-</script> -->
+
 
 
 <script>
