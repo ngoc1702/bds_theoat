@@ -121,7 +121,15 @@ genesis_register_sidebar(
 		'id'			=> 'nhantuvan',
 		'name'			=> 'Toàn bộ - Nhận tư vấn',
 	)
+	);
+
+genesis_register_sidebar( 
+	array(
+		'id'			=> 'content-video',
+		'name'			=> 'Trang chủ - Video',
+	)
 );
+
 
 genesis_register_sidebar( 
 	array(
@@ -273,7 +281,7 @@ function caia_add_content_after_footer(){
 
 add_action('genesis_before_footer','caia_add_content_after_footer2');
 function caia_add_content_after_footer2(){
-	echo '<div class="before_footer section"><div class="wrap"><div class="wrap-section">';
+	echo '<div id="lienhe" class="before_footer section"><div class="wrap"><div class="wrap-section">';
 
 		dynamic_sidebar( 'Toàn bộ - Nội dung trước chân trang' );
 	echo '</div></div></div>';

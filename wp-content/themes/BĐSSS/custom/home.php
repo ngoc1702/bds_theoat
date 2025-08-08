@@ -4,13 +4,21 @@
 add_action('genesis_after_header','caia_add_content_slider');
 function caia_add_content_slider(){
 
-	if( is_active_sidebar( 'content-background' ) ){
-		echo '<div id="noibat" class="content-background section">
-		 <div class="bg-opacity"></div>
-		<div class="wrap">';
-			dynamic_sidebar( 'Trang chủ - Nổi bật' );
-		echo '</div></div>';
-	}
+
+if ( is_active_sidebar( 'content-video' ) ) {
+    echo '<div class="content-video section">';
+    dynamic_sidebar( 'content-video' );
+    echo '</div>';
+}
+
+
+	// if( is_active_sidebar( 'content-background' ) ){
+	// 	echo '<div id="noibat" class="content-background section">
+	// 	 <div class="bg-opacity"></div>
+	// 	<div class="wrap">';
+	// 		dynamic_sidebar( 'Trang chủ - Nổi bật' );
+	// 	echo '</div></div>';
+	// }
 
 				if( is_active_sidebar( 'content-moban1' ) ){
 		echo '<div  class="content-moban1 section">
@@ -29,7 +37,7 @@ function caia_add_content_slider(){
 
 
 		if( is_active_sidebar( 'content-tongquan' ) ){
-		echo '<div class="content-tongquan section">
+		echo '<div id="tongquan" class="content-tongquan section">
 		<div class="wrap">';
 			dynamic_sidebar( 'Trang chủ - Tổng quan dự án' );
 		echo '</div></div>';
@@ -64,7 +72,7 @@ function caia_add_content_slider(){
 	}
 
 			if( is_active_sidebar( 'content-sanpham' ) ){
-		echo '<div class="content-sanpham section"><div class="wrap">';
+		echo '<div id="sanpham" class="content-sanpham section"><div class="wrap">';
 			dynamic_sidebar( 'Trang chủ - Sản phẩm' );
 		echo '</div></div>';
 	}
@@ -84,7 +92,7 @@ function caia_add_content_slider(){
 	}
 
 			if( is_active_sidebar( 'content-thanhvien' ) ){
-		echo '<div id="lienhe" class="content-thanhvien section"><div class="wrap">';
+		echo '<div  class="content-thanhvien section"><div class="wrap">';
 			dynamic_sidebar( 'Trang chủ - Thành viên' );
 		echo '</div></div>';
 	}

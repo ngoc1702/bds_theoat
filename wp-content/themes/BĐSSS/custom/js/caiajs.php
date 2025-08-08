@@ -42,6 +42,55 @@ jQuery(document).ready(function ($) {
     centerMode: false,
     focusOnSelect: true
   });
+
+
+  	$(".content-sanpham .main-posts").slick({      
+		arrows: false,
+		infinite: true,
+		dots: true,
+		speed: 600,	
+		autoplay: false,
+		autoplaySpeed: 6000,	
+		pauseOnHover: false,
+		pauseOnFocus: false,
+		slidesToShow: 4,
+		slidesToScroll: 4,
+    
+		responsive: [
+			{
+			breakpoint: 801,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+				}
+			}
+		]
+	});
+
+
+  
+  	$(".content-news .main-posts").slick({      
+		arrows: false,
+		infinite: true,
+		dots: true,
+		speed: 600,	
+		autoplay: false,
+		autoplaySpeed: 6000,	
+		pauseOnHover: false,
+		pauseOnFocus: false,
+		slidesToShow: 3,
+		slidesToScroll: 3,
+    
+		responsive: [
+			{
+			breakpoint: 801,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+				}
+			}
+		]
+	});
 });
 </script>
 
@@ -58,18 +107,19 @@ jQuery(document).ready(function ($) {
   //     $(this).parent().find('.search-form').toggleClass('active');
   //   }
   // )
+  
 
-  //     $(window).on('scroll', function() {
-  //     if ($(window).scrollTop() > 80) {
-  //       $('.site-header').addClass('scrolled');
-  //       $('.site-header .menu a').addClass('scrolled');
-  //       $('.search-form input[type="search"]').addClass('scrolled');
-  //     } else {
-  //       $('.site-header').removeClass('scrolled');
-  //       $('.site-header .menu a').removeClass('scrolled');
-  //       $('.search-form input[type="search"]').removeClass('scrolled');
-  //     }
-  //   });
+      $(window).on('scroll', function() {
+      if ($(window).scrollTop() > 80) {
+        $('.site-header').addClass('scrolled');
+        $('.site-header .menu a').addClass('scrolled');
+        // $('.search-form input[type="search"]').addClass('scrolled');
+      } else {
+        $('.site-header').removeClass('scrolled');
+        // $('.site-header .menu a').removeClass('scrolled');
+        // $('.search-form input[type="search"]').removeClass('scrolled');
+      }
+    });
 
 
     $('.site-header .menu a[href^="#"]').on('click', function(e){
@@ -77,12 +127,20 @@ jQuery(document).ready(function ($) {
     const target = $($(this).attr('href'));
     if (target.length) {
       $('html, body').animate({
-        scrollTop: target.offset().top - 80
+        scrollTop: target.offset().top - 100
       }, 600);
     }
   });
 
-
+      $('.before_footer .menu a[href^="#"]').on('click', function(e){
+    e.preventDefault();
+    const target = $($(this).attr('href'));
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top - 100
+      }, 600);
+    }
+  });
 
   }
 )
@@ -144,59 +202,6 @@ jQuery(document).ready(function($) {
 </script>
 
 <!-- Trang theo catergory -->
-<script>
-jQuery(document).ready(function ($) {
-    // Sự kiện cho category cha
-    $(document).on('click', '.cat-item:not(.cat-child)', function () {
-        $('.cat-item').removeClass('active');
-        $(this).addClass('active');
-        // Hiển thị sản phẩm theo category
-        var cat = $(this).data('cat');
-        $('.product-list').hide();
-        $('.product-list.' + cat).show().css('display', 'grid');
-    });
-
-    // Sự kiện cho category con
-    $(document).on('click', '.cat-child', function (e) {
-        e.stopPropagation();
-        $('.cat-child').removeClass('active');
-        $(this).addClass('active');
-        // Giữ active cho cha
-        var $parent = $(this).closest('.sub-cat-list').prev('.cat-item');
-        $('.cat-item:not(.cat-child)').removeClass('active');
-        $parent.addClass('active');
-        // Hiển thị sản phẩm theo category con
-        var cat = $(this).data('cat');
-        $('.product-list').hide();
-       $('.product-list.' + cat).show().css('display', 'grid');
-    });
-});
-
-// đong icon +/-
-jQuery(document).ready(function ($) {
-    $(document).on('click', '.cat-item', function (e) {
-        if ($(this).hasClass('cat-child')) return;
-
-        var $li = $(this);
-        var $subcat = $li.next('.sub-cat-list');
-        var $icon = $li.find('.toggle-subcat');
-
-        if ($subcat.length) {
-            $subcat.slideToggle(200, function() {
-                // Đổi icon sau khi hoàn thành toggle
-                if ($subcat.is(':visible')) {
-                    $icon.text('-');
-                } else {
-                    $icon.text('+');
-                }
-            });
-
-        }
-    });
-});
-</script>
-
-
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
