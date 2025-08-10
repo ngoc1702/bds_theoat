@@ -48,7 +48,18 @@ function viet_nhan_group() {
 }
 
 
-
+// Thêm bài viết liên quan
+add_action( 'genesis_before_footer', 'caia_add_post_YARPP', 7 );
+function caia_add_post_YARPP(){
+	yarpp_related(
+		array(
+			'post_type' => 'post',
+			'threshold' => 1,
+			'template' => 'yarpp-template-post.php',
+			'limit' => 3,
+		)
+	);
+}
 
 
 

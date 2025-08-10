@@ -212,17 +212,19 @@ genesis_register_sidebar(
 );
 
 
-genesis_register_sidebar( 
-	array(
-		'id'			=> 'content-thanhvien',
-		'name'			=> 'Trang chủ - Thành viên',
-	)
-);
 
 genesis_register_sidebar( 
 	array(
 		'id'			=> 'page_blog',
 		'name'			=> 'Trang Blog',
+	)
+);
+
+
+genesis_register_sidebar( 
+	array(
+		'id'			=> 'content-thanhvien',
+		'name'			=> 'Toàn bộ - Thành viên',
 	)
 );
 
@@ -254,6 +256,9 @@ genesis_register_sidebar(
 	)
 );
 
+
+
+
 add_action('genesis_before_header','caia_add_contactus');
 function caia_add_contactus(){
 	if( is_active_sidebar( 'nhantuvan' ) ){
@@ -263,6 +268,14 @@ function caia_add_contactus(){
 	}
 }
 
+add_action('genesis_before_footer','caia_add_thanhvien');
+function caia_add_thanhvien(){
+if( is_active_sidebar( 'content-thanhvien' ) ){
+		echo '<div  class="content-thanhvien section"><div class="wrap">';
+			dynamic_sidebar( 'Toàn bộ - Thành viên' );
+		echo '</div></div>';
+	}
+}
 
 remove_action('genesis_footer','genesis_do_footer');
 add_action('genesis_footer','caia_add_content_footer');
@@ -621,6 +634,38 @@ function change_number_posts_per_category( $query ) {
 		return $query;	
 	}
 }
+
+
+add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
+    $prefix = 'prefix_';
+
+    $meta_boxes[] = [
+        'title'      => esc_html__( 'Thông tin', 'the oasis' ),
+        'taxonomies' => ['product_cat'],
+        'fields'     => [
+            [
+                'id'    => $prefix . 'tieude',
+                'name'  => esc_html__( 'Tiêu đề chuyên mục', 'the oasis' ),
+                'type'  => 'wysiwyg',
+                'options' => [
+                    'textarea_rows' => 2,
+                ],
+            ],
+            [
+                'id'    => $prefix . 'noidung',
+                'name'  => esc_html__( 'Nội dung chuyên mục', 'the oasis' ),
+                'type'  => 'wysiwyg',
+                'clone' => true, 
+                'sort_clone' => true,
+                'options' => [
+                    'textarea_rows' => 2,
+                ],
+            ],
+        ],
+    ];
+
+    return $meta_boxes;
+});
 
 
 

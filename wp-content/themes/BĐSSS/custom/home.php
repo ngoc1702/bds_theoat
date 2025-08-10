@@ -91,11 +91,11 @@ if ( is_active_sidebar( 'content-video' ) ) {
 		echo '</div></div>';
 	}
 
-			if( is_active_sidebar( 'content-thanhvien' ) ){
-		echo '<div  class="content-thanhvien section"><div class="wrap">';
-			dynamic_sidebar( 'Trang chủ - Thành viên' );
-		echo '</div></div>';
-	}
+	// 		if( is_active_sidebar( 'content-thanhvien' ) ){
+	// 	echo '<div  class="content-thanhvien section"><div class="wrap">';
+	// 		dynamic_sidebar( 'Trang chủ - Thành viên' );
+	// 	echo '</div></div>';
+	// }
 	
 }
 

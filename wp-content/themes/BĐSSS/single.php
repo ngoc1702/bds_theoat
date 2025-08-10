@@ -42,14 +42,14 @@ add_filter( 'the_content', 'add_post_thumbnail_to_content' );
 
 
 // Thêm bài viết liên quan
-add_action( 'genesis_before_sidebar_widget_area', 'caia_add_post_YARPP' );
+add_action( 'genesis_before_footer', 'caia_add_post_YARPP', 7 );
 function caia_add_post_YARPP(){
 	yarpp_related(
 		array(
 			'post_type' => 'post',
 			'threshold' => 1,
 			'template' => 'yarpp-template-post.php',
-			'limit' => 5,
+			'limit' => 3,
 		)
 	);
 }

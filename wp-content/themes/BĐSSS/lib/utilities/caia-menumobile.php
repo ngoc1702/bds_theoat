@@ -255,25 +255,64 @@ if (! class_exists('ResponsiveMenu')) {
 		{
 		?>
 			<script>
+				// jQuery(document).ready(function($) {
+				// 	$("#click-menu").click(function() {
+				// 		$(this).toggleClass('change');
+				// 		$("#responsive-menu").toggle();
+				// 	});
+				// 	$("#responsive-menu ul li.menu-item-has-children ul.sub-menu").before('<span class="active-menu open">▼</span><span class="active-menu close">▲</span>');
+				// 	$(".active-menu.open").click(function() {
+				// 		$(this).hide();
+				// 		$(this).parent().find(".active-menu.close").hide();
+				// 		$(this).parent().find(".active-menu.close:first").show();
+				// 		$(this).parent().find("ul.sub-menu").show();
+				// 		$(this).parent().find("ul.sub-menu ul").hide();
+				// 	});
+				// 	$(".active-menu.close").click(function() {
+				// 		$(this).hide();
+				// 		$(this).parent().find(".active-menu.open").show();
+				// 		$(this).parent().find("ul.sub-menu").hide();
+				// 	});
+				// });
 				jQuery(document).ready(function($) {
-					$("#click-menu").click(function() {
-						$(this).toggleClass('change');
-						$("#responsive-menu").toggle();
-					});
-					$("#responsive-menu ul li.menu-item-has-children ul.sub-menu").before('<span class="active-menu open">▼</span><span class="active-menu close">▲</span>');
-					$(".active-menu.open").click(function() {
-						$(this).hide();
-						$(this).parent().find(".active-menu.close").hide();
-						$(this).parent().find(".active-menu.close:first").show();
-						$(this).parent().find("ul.sub-menu").show();
-						$(this).parent().find("ul.sub-menu ul").hide();
-					});
-					$(".active-menu.close").click(function() {
-						$(this).hide();
-						$(this).parent().find(".active-menu.open").show();
-						$(this).parent().find("ul.sub-menu").hide();
-					});
-				});
+    // Mở / đóng menu
+    $("#click-menu").click(function() {
+        $(this).toggleClass('change');
+        $("#responsive-menu").toggleClass('open'); // 🔹 Chỉ toggle class
+    });
+
+    // Menu con
+    $("#responsive-menu ul li.menu-item-has-children ul.sub-menu")
+        .before('<span class="active-menu open">▼</span><span class="active-menu close">▲</span>');
+
+    $(".active-menu.open").click(function() {
+        $(this).hide();
+        $(this).parent().find(".active-menu.close").hide();
+        $(this).parent().find(".active-menu.close:first").show();
+        $(this).parent().find("ul.sub-menu").show();
+        $(this).parent().find("ul.sub-menu ul").hide();
+    });
+
+    $(".active-menu.close").click(function() {
+        $(this).hide();
+        $(this).parent().find(".active-menu.open").show();
+        $(this).parent().find("ul.sub-menu").hide();
+    });
+
+    // Đóng menu khi click vào link nội trang
+    $(document).on('click', '#responsive-menu a[href^="#"]', function(e) {
+        e.preventDefault();
+        const target = $($(this).attr('href'));
+
+        if (target.length) {
+            $("#responsive-menu").removeClass('open'); // 🔹 Đóng menu
+            $('html, body').animate({
+                scrollTop: target.offset().top - 100
+            }, 600);
+        }
+    });
+});
+
 			</script>
 <?php
 		}

@@ -27,8 +27,8 @@ jQuery(document).ready(function ($) {
     infinite: true,
     arrows: false,
     fade: true,
-    autoplay: true,             
-    autoplaySpeed: 4000,         
+    autoplay: true,
+    autoplaySpeed: 4000,
     asNavFor: '.content-tienich ul:last-child'
   });
 
@@ -40,13 +40,21 @@ jQuery(document).ready(function ($) {
     dots: false,
     arrows: false,
     centerMode: false,
-    focusOnSelect: true
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4
+        }
+      }
+    ]
   });
 
 
   	$(".content-sanpham .main-posts").slick({      
 		arrows: false,
-		infinite: true,
+		infinite: false,
 		dots: true,
 		speed: 600,	
 		autoplay: false,
@@ -85,19 +93,103 @@ jQuery(document).ready(function ($) {
 			{
 			breakpoint: 801,
 				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 2,
+					slidesToShow: 1,
+					slidesToScroll: 1,
 				}
 			}
 		]
 	});
+
+
+
+  $('.chitiet_sp .slide_sp ul:first-child').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		infinite: true,
+		arrows: false,
+		fade: true,
+		asNavFor: '.chitiet_sp .slide_sp ul:last-child'
+	});
+	$('.chitiet_sp .slide_sp ul:last-child').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		infinite: true,
+		asNavFor: '.chitiet_sp .slide_sp ul:first-child',
+		dots: false,
+		arrows: false,
+		centerMode: false,
+		focusOnSelect: true
+	});	
+
+
+$(".content-tongquan section:nth-child(3) .textwidget").slick({
+    arrows: false,
+    infinite: false, // 🔹 Không tạo clone
+    dots: true,
+    speed: 600,
+    autoplay: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1
+            }
+        },
+        {
+            breakpoint: 9999,
+            settings: "unslick"
+        }
+    ]
+});
+
+$(".yarpp-related .main-posts").slick({
+    arrows: false,
+    infinite: false, 
+    dots: true,
+    speed: 600,
+    autoplay: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1
+            }
+        },
+        {
+            breakpoint: 9999,
+            settings: "unslick"
+        }
+    ]
+});
+
+$(".taxonomy-products").slick({
+    arrows: false,
+    infinite: false, 
+    dots: true,
+    speed: 600,
+    autoplay: false,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2
+            }
+        },
+        {
+            breakpoint: 9999,
+            settings: "unslick"
+        }
+    ]
+});
+
 });
 </script>
-
-
-
-
-
 
 
 <script>
@@ -122,15 +214,24 @@ jQuery(document).ready(function ($) {
     });
 
 
-    $('.site-header .menu a[href^="#"]').on('click', function(e){
+$(document).on('click', '#responsive-menu a[href^="#"]', function(e) {
     e.preventDefault();
     const target = $($(this).attr('href'));
+
     if (target.length) {
-      $('html, body').animate({
-        scrollTop: target.offset().top - 100
-      }, 600);
+        // Đóng menu + đổi icon về ban đầu
+        $("#responsive-menu").removeClass('open');
+        $("#click-menu").removeClass('change');
+
+        // Scroll tới vị trí
+        $('html, body').animate({
+            scrollTop: target.offset().top - 100
+        }, 600);
     }
-  });
+});
+
+
+
 
       $('.before_footer .menu a[href^="#"]').on('click', function(e){
     e.preventDefault();
@@ -184,19 +285,6 @@ jQuery(document).ready(function($) {
 	// });
 }
 )
-
-
-// jQuery(document).ready(function($) {
-//   $('.nhanbaogia span').click(function() {
-//     $('.nhantuvan').fadeIn();
-//     $('.nhantuvan .widget_caldera_forms_widget').fadeIn();
-//   });
-
-//   $('.nhantuvan .close-popup').click(function() {
-//     $('.nhantuvan').fadeOut();
-//   });
-// });
-
 
 
 </script>

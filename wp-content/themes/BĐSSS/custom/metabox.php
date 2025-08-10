@@ -30,19 +30,53 @@ function prefix_register_taxonomy_meta_boxes($meta_boxes)
                 ),             
             ),
 
-             array(
-                'id' => $prefix . 'mota',
-                'name' => esc_html__( 'Mô tả', 'adsdigi' ), 
+              array(
+                'name' => 'Form',
+                'id' => 'form',
+                'type' => 'text',
+                'size' => 70,
+            ),
+
+               array(
+                'id' => $prefix . 'social',
+                'name' => esc_html__( 'Mạng xã hội', 'adsdigi' ), 
                 'type'  => 'wysiwyg',   
                 'options' => array(
                     'textarea_rows' =>2,
                 ),             
             ),
 
+             array(
+                'id' => $prefix . 'ttkt',
+                'name' => esc_html__( 'Thông tin kỹ thuật', 'adsdigi' ), 
+                'type'  => 'wysiwyg',   
+                'options' => array(
+                    'textarea_rows' =>2,
+                ),             
+            ),
+
+              array(
+                'id' => $prefix . 'noithat',
+                'name' => esc_html__( 'Nội thất bàn giao', 'adsdigi' ), 
+                'type'  => 'wysiwyg',   
+                'options' => array(
+                    'textarea_rows' =>2,
+                ),             
+            ),
+                  array(
+                'id' => $prefix . 'hamb',
+                'name' => esc_html__( 'Hình ảnh mặt bằng', 'adsdigi' ), 
+                'type'  => 'wysiwyg',   
+                'options' => array(
+                    'textarea_rows' =>2,
+                ),             
+            ),
+
+
         ),
     );
 
-
+ 
 
     // liên hệ
     $meta_boxes[] = array(

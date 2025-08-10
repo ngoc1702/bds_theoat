@@ -252,7 +252,8 @@ class Caia_Post_List_Widget extends WP_Widget{
 								$cur_post_title_attr = the_title_attribute( array( 'echo' => false, 'post' => $post ) );
 
 								$listitems .= sprintf( '<li><a href="%s" title="%s" class="%s">%s</a><p class="name-category"><a href="%s">%s</a></p><p class="byline post-info">%s</p><h3><a href="%s" title="%s">%s</a></h3></li>', 
-									get_permalink(),
+									
+								get_permalink(),
 									$cur_post_title_attr,
 									esc_attr( $image_alignment_extra ),
 									genesis_get_image( array( 
@@ -769,30 +770,29 @@ function caia_post_list_widget_do_post($widget_code, $instance){
 		echo '</span>';
 	}
 	
-	if ( ! empty( $link_category ) ) {
-		do_action('caia_post_list_widget_term_before_title_post');
-		echo '<p class="name-category">';
-			global $post;
-			// $cat = get_the_category( $post->ID );
-			// $name_cat = $cat[0]->name;
-			// $link_cat = get_category_link( $cat[0]->term_id );	
-			if ( 'product' === get_post_type( $post ) ) {
-    $product_cats = get_the_terms( $post->ID, 'product_cat' );
-    if ( ! empty( $product_cats ) && ! is_wp_error( $product_cats ) ) {
-        $name_cat = $product_cats[0]->name;
-        $link_cat = get_term_link( $product_cats[0]->term_id, 'product_cat' );
-    } else {
-        $name_cat = '';
-        $link_cat = '';
-    }
-} else {
-    $cat = get_the_category( $post->ID );
-    $name_cat = $cat[0]->name;
-    $link_cat = get_category_link( $cat[0]->term_id );
-}
-			echo '<a >'.$name_cat.'</a>';
-		echo '</p>';
+if ( ! empty( $link_category ) ) {
+	do_action('caia_post_list_widget_term_before_title_post');
+	global $post;
+
+	if ( 'product' === get_post_type( $post ) ) {
+		$product_cats = get_the_terms( $post->ID, 'product_cat' );
+		if ( ! empty( $product_cats ) && ! is_wp_error( $product_cats ) ) {
+			$name_cat = $product_cats[0]->name;
+			$link_cat = get_term_link( $product_cats[0]->term_id, 'product_cat' );
+		} else {
+			$name_cat = '';
+			$link_cat = '';
+		}
+	} else {
+		$cat = get_the_category( $post->ID );
+		$name_cat = $cat[0]->name;
+		$link_cat = get_category_link( $cat[0]->term_id );
 	}
+
+	// Thẻ <a> bọc ngoài <p>
+	echo '<a href="' . esc_url( $link_cat ) . '"><p class="name-category">' . esc_html( $name_cat ) . '</p></a>';
+}
+
 	
 	if( !empty($check_meta) ){
 		do_action('caia_post_list_widget_before_title_post');

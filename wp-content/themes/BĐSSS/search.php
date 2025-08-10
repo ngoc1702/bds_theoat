@@ -33,11 +33,11 @@ add_filter( 'get_the_content_more_link', 'be_more_link' );
 add_filter( 'the_content_more_link', 'be_more_link' );
 function be_more_link($more_link) {
 	$lang = get_bloginfo('language');
-	if($lang == 'vi'){
-		return sprintf('...<a href="%s" class="more-link">%s</a>', get_permalink(), 'Tìm hiểu thêm');
-	}else{
-		return sprintf('...<a href="%s" class="more-link">%s</a>', get_permalink(), 'See more');
-	}
+	// if($lang == 'vi'){
+	// 	return sprintf('...<a href="%s" class="more-link">%s</a>', get_permalink(), 'Tìm hiểu thêm');
+	// }else{
+	// 	return sprintf('...<a href="%s" class="more-link">%s</a>', get_permalink(), 'See more');
+	// }
 }
 
 genesis();

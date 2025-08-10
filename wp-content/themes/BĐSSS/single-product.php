@@ -37,7 +37,8 @@ function add_slide_product(){
 	global $post;
 	$anhsp = get_post_meta( $post->ID, 'anhsp', true);
 	$gt = get_post_meta( $post->ID, 'gt', true);
-	$dactrung = get_post_meta( $post->ID, 'dactrung', true);
+    $form = get_post_meta($post->ID, 'form', true);
+	$social = get_post_meta($post->ID, 'social', true);
 
 	if( !empty($anhsp) ||  !empty($gt) ) {
 		echo '<div class="chitiet_sp">';
@@ -49,10 +50,14 @@ function add_slide_product(){
 			echo '<div class="info_sp">';
 				echo '<h1>'.get_the_title().'</h1>';
 				echo do_shortcode($gt);
-                echo '<div class="nhantuvan-group">';
-                echo '<p class="btn_call"><a href="tel:0961323369">Liên hệ</a></p>';
-				echo '<p class="nhanbaogia"><span>Nhận báo giá</span></p>';
-                echo '</div>';
+
+				echo '<div class="form_lienhe">';
+	echo do_shortcode($form);
+	echo '</div>';
+
+		echo '<div class="social">';
+	echo do_shortcode($social);
+	echo '</div>';
 			echo '</div>';
 				
 
@@ -64,58 +69,43 @@ remove_action( 'genesis_loop', 'genesis_do_loop' );
 add_action( 'genesis_loop', 'add_loop_sp' );
 function add_loop_sp(){
 	global $post;
-	$mota = get_post_meta( $post->ID, 'mota', true);
+	$mota = get_post_meta( $post->ID, 'ttkt', true);
+	$noithat = get_post_meta( $post->ID, 'noithat', true);
+	$hamb = get_post_meta( $post->ID, 'hamb', true);
+		echo '<div class="content-duoi">';
 		if( !empty($mota) ) {
-		echo '<div class="mota">';
+		echo '<div class="ttkt">';
 				echo do_shortcode($mota);
 		echo '</div>';
 
 	}
+	if( !empty($noithat) ) {
+		echo '<div class="noithat">';
+				echo do_shortcode($noithat);
 		echo '</div>';
 
 	}
+if( !empty($hamb) ) {
+		echo '<div class="hamb">';
+				echo do_shortcode($hamb);
+		echo '</div>';
+
+	}
+	echo '</div>';
+		echo '</div>';
 
 
-
-	// $pin = get_post_meta( $post->ID, 'pin', true);
-
-	// if( !empty($pin) ) {
-	// 	echo '<div class="pin">';
-	// 			echo do_shortcode($pin);
-	// 	echo '</div>';
-
-	// }
-
-	// $thongso = get_post_meta( $post->ID, 'thongso', true);
-
-	// if( !empty($thongso) ) {
-	// 	echo '<div class="thongso">';
-	// 			echo do_shortcode($thongso);
-	// 	echo '</div>';
-
-	// }
-
-	// $banve = get_post_meta( $post->ID, 'banve', true);
-
-	// if( !empty($banve) ) {
-	// 	echo '<div class="banve">';
-	// 			echo do_shortcode($banve);
-	// 	echo '</div>';
-
-	// }
-// }
-
-
+	}
 
 // Thêm bài viết liên quan
-add_action( 'genesis_before_sidebar_widget_area', 'caia_add_product_YARPP' );
+add_action( 'genesis_before_footer', 'caia_add_product_YARPP', 7 );
 function caia_add_product_YARPP(){
 	yarpp_related(
 		array(
 			'post_type' => 'product',
 			'threshold' => 1,
 			'template' => 'yarpp-template-product.php',
-			'limit' => 3,
+			'limit' => 4,
 		)
 	);
 }

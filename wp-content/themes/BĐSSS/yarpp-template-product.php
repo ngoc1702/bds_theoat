@@ -3,9 +3,9 @@
 
 <?php
 if ($related_query->have_posts()):
-    echo '<div class="widget"><div class="widgettitle"><p>Sản phẩm liên quan</p></div><div class="main-posts">';
+    echo '<div class="widget"><div class="widgettitle"><p>Sản phẩm liên quan</p></div><div class="main-products">';
     while ($related_query->have_posts()) : $related_query->the_post(); 
-        echo '<div class="post">';
+        echo '<div class="product">';
             ?>
             <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="alignleft">
                 <?php the_post_thumbnail('thumbnail'); ?>
