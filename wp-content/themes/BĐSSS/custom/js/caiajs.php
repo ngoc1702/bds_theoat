@@ -8,7 +8,7 @@ function caia_add_file_jquery(){
   document.getElementById('video-thumbnail').addEventListener('click', function () {
     this.classList.add('is-playing');
     this.innerHTML = `
-      <iframe width="689" height="402"
+      <iframe width="100%" height="380px"
         src="https://www.youtube.com/embed/30fxjibK2IY?autoplay=1"
         title="YouTube video player"
         frameborder="0"
@@ -122,71 +122,67 @@ jQuery(document).ready(function ($) {
 	});	
 
 
-$(".content-tongquan section:nth-child(3) .textwidget").slick({
-    arrows: false,
-    infinite: false, // 🔹 Không tạo clone
-    dots: true,
-    speed: 600,
-    autoplay: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    responsive: [
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 1
+// 
+
+// Hàm khởi tạo/hủy slider tùy kích thước màn hình
+jQuery(document).ready(function($) {
+    var $wrap = $(".content-moban2 .wrap");
+    var $lastItem = $wrap.find("section:last-child");
+    var movedItem = null;
+
+    function initSlickSlider(selector, mobileSettings) {
+        var $slider = $(selector);
+
+        if ($(window).width() < 768) {
+            // Trường hợp riêng cho .content-moban2
+            if ($slider.is($wrap) && movedItem === null) {
+                movedItem = $wrap.find("section:last-child").detach();
+                $(".content-moban2").append(movedItem);
             }
+            if (!$slider.hasClass('slick-initialized')) {
+                $slider.slick(mobileSettings);
+            }
+        } else {
+            // PC
+            if ($slider.hasClass('slick-initialized')) {
+                $slider.slick('unslick');
+            }
+            if ($slider.is($wrap) && movedItem) {
+                $wrap.append(movedItem); // trả về cuối wrap như ban đầu
+                movedItem = null;
+            }
+        }
+    }
+
+    var slidersConfig = [
+        {
+            selector: ".content-tongquan section:nth-child(3) .textwidget",
+            settings: { arrows:false, infinite:false, dots:true, speed:600, autoplay:false, slidesToShow:1, slidesToScroll:1 }
         },
         {
-            breakpoint: 9999,
-            settings: "unslick"
+            selector: ".yarpp-related .main-posts",
+            settings: { arrows:false, infinite:false, dots:true, speed:600, autoplay:false, slidesToShow:1, slidesToScroll:1 }
+        },
+        {
+            selector: ".taxonomy-products",
+            settings: { arrows:false, infinite:false, dots:true, speed:600, autoplay:false, slidesToShow:2, slidesToScroll:2 }
+        },
+        {
+            selector: ".content-moban2 .wrap",
+            settings: { arrows:false, infinite:false, dots:true, speed:600, autoplay:false, slidesToShow:1, slidesToScroll:1 }
         }
-    ]
+    ];
+
+    function runAllSliders() {
+        slidersConfig.forEach(function(slider) {
+            initSlickSlider(slider.selector, slider.settings);
+        });
+    }
+
+    runAllSliders();
+    $(window).on('resize', runAllSliders);
 });
 
-$(".yarpp-related .main-posts").slick({
-    arrows: false,
-    infinite: false, 
-    dots: true,
-    speed: 600,
-    autoplay: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    responsive: [
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 1
-            }
-        },
-        {
-            breakpoint: 9999,
-            settings: "unslick"
-        }
-    ]
-});
-
-$(".taxonomy-products").slick({
-    arrows: false,
-    infinite: false, 
-    dots: true,
-    speed: 600,
-    autoplay: false,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    responsive: [
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 2
-            }
-        },
-        {
-            breakpoint: 9999,
-            settings: "unslick"
-        }
-    ]
-});
 
 });
 </script>
@@ -231,6 +227,15 @@ $(document).on('click', '#responsive-menu a[href^="#"]', function(e) {
 });
 
 
+  $('.site-header .menu a[href^="#"]').on('click', function(e){
+    e.preventDefault();
+    const target = $($(this).attr('href'));
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top - 100
+      }, 600);
+    }
+  });
 
 
       $('.before_footer .menu a[href^="#"]').on('click', function(e){

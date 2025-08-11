@@ -2,11 +2,9 @@
 
 /* Template Name: Trang CTCP Việt Nhân Group */
 
-
-add_filter('genesis_site_layout', 'caia_cpt_layout');
-function caia_cpt_layout()
-{
-	return 'full-width-content';
+add_filter( 'genesis_site_layout', 'caia_cpt_layout' );
+function caia_cpt_layout() {
+  return 'full-width-content';
 }
 
 // Xóa tiêu đề

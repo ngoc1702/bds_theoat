@@ -2,12 +2,11 @@
 
 /* Template Name: Trang CTCP Bắc Sài Gòn */
 
-
-add_filter('genesis_site_layout', 'caia_cpt_layout');
-function caia_cpt_layout()
-{
-	return 'full-width-content';
+add_filter( 'genesis_site_layout', 'caia_cpt_layout' );
+function caia_cpt_layout() {
+  return 'full-width-content';
 }
+
 
 // Xóa tiêu đề
 remove_action('genesis_entry_header', 'genesis_do_post_title');

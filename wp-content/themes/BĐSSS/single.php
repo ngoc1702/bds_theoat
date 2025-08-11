@@ -31,14 +31,14 @@ function caia_add_content_post_meta(){
 	echo '</div>';
 }
 
-function add_post_thumbnail_to_content( $content ) {
-    if ( is_singular('post') && has_post_thumbnail() && is_main_query() ) {
-        $thumbnail = get_the_post_thumbnail( get_the_ID(), 'full', array( 'class' => 'post-thumbnail' ) );
-        $content = $thumbnail . $content;
-    }
-    return $content;
-}
-add_filter( 'the_content', 'add_post_thumbnail_to_content' );
+// function add_post_thumbnail_to_content( $content ) {
+//     if ( is_singular('post') && has_post_thumbnail() && is_main_query() ) {
+//         $thumbnail = get_the_post_thumbnail( get_the_ID(), 'full', array( 'class' => 'post-thumbnail' ) );
+//         $content = $thumbnail . $content;
+//     }
+//     return $content;
+// }
+// add_filter( 'the_content', 'add_post_thumbnail_to_content' );
 
 
 // Thêm bài viết liên quan
