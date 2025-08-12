@@ -208,7 +208,7 @@ body {
     height: 100%;
     text-indent: -9999px;
     background: url(images/logoo.png) no-repeat left center;
-    background-size: 130px;
+    background-size: 160px;
     /* margin-left: 25px; */
 }
 
@@ -1374,7 +1374,7 @@ input#submit {
 /* footer */
 .before_footer {
     margin: 0px auto;
-    padding: 170px 0px 5px;
+    padding: 210px 0px 5px;
     width: 100%;
     background: url(images/Subtract.png) center center / cover no-repeat;
     background-repeat: no-repeat;
@@ -3518,6 +3518,12 @@ background-clip: text;
     .site-header .textwidget p {
         right: -255px;
     }
+
+    .before_footer {
+    margin: 0px auto;
+    padding: 160px 0px 5px;
+    width: 100%;
+}
 }
 
 
